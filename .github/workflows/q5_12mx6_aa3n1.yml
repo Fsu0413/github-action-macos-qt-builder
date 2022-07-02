@@ -1,0 +1,17 @@
+name: q5_12mx6_aa3n1
+
+on: [ push ]
+
+jobs:
+  build:
+    runs-on: macos-11
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: 'build'
+          path: 'build'
+          submodules: 'recursive'
+      
+      - name: print path
+        run: |
+          for i in `echo $PATH | sed 's/:/ /g'` ; do echo $i; ls $i; echo; echo; done
