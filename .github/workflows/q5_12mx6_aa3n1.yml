@@ -14,4 +14,4 @@ jobs:
       
       - name: print path
         run: |
-          for i in `echo $PATH | sed 's/:/ /g'` ; do echo $i; ls $i; echo; echo; done
+          for i in `echo $PATH | sed 's/:/ /g'` ; do echo $i; ls $i || echo 'LS failed'; echo; echo; done
